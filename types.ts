@@ -27,4 +27,5 @@ export interface OrderDetails {
 export interface AppConfig {
   telegramBotToken: string;
   telegramChatId: string;
+  geminiApiKey: string;
 }

@@ -1,13 +1,22 @@
 import { GoogleGenAI } from "@google/genai";
 import { Product } from "../types";
 
-// Always use process.env.API_KEY directly as per guidelines
-const aiClient = new GoogleGenAI({ apiKey: process.env.API_KEY });
+let aiClient: GoogleGenAI | null = null;
+
+export const initGemini = (apiKey: string) => {
+  if (apiKey) {
+    aiClient = new GoogleGenAI({ apiKey });
+  }
+};
 
 export const getAIResponse = async (
   userMessage: string, 
   products: Product[]
 ): Promise<string> => {
+  if (!aiClient) {
+    return "Lütfen geçerli bir API Anahtarı ile sistemin yüklendiğinden emin olun.";
+  }
+
   const productContext = products.map(p => 
     `${p.title} (${p.category}): ${p.price} TL - ${p.description}`
   ).join('\n');

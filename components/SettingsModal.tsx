@@ -28,10 +28,21 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, c
        <div className="relative bg-dark-900 w-full max-w-md rounded-2xl border border-white/10 shadow-2xl p-6">
          <h3 className="text-xl font-bold text-white mb-4">Geliştirici Ayarları</h3>
          <p className="text-xs text-gray-400 mb-6">
-           Siparişleri kendi Telegram botunuza düşürmek için aşağıdaki bilgileri doldurun.
+           Siparişleri kendi Telegram botunuza düşürmek ve AI Asistanı kullanmak için aşağıdaki bilgileri doldurun.
          </p>
 
          <div className="space-y-4">
+           <div>
+             <label className="block text-xs font-medium text-blue-400 mb-1 uppercase">Gemini API Key</label>
+             <input
+               type="password"
+               value={localConfig.geminiApiKey}
+               onChange={e => setLocalConfig({...localConfig, geminiApiKey: e.target.value})}
+               className="w-full bg-dark-800 border border-white/10 rounded px-3 py-2 text-white text-sm focus:border-blue-500 outline-none"
+               placeholder="AI_XXXXXX..."
+             />
+           </div>
+           
            <div>
              <label className="block text-xs font-medium text-blue-400 mb-1 uppercase">Telegram Bot Token</label>
              <input

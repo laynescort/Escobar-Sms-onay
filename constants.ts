@@ -63,14 +63,14 @@ export const MOCK_PRODUCTS: Product[] = [
     stock: true
   },
 
-  // Config Kategorisi - Clean Professional Style
+  // Config Kategorisi - Reverted to Premium Style
   {
     id: 'cfg-1',
     title: 'E-Devlet Tapu + Araç Config',
     description: '.svb formatında. Tapu ve araç sorgulama özellikli.',
     price: 1200.00,
     category: ProductCategory.CONFIG,
-    // Professional Red
+    // Premium Red (Government style)
     image: 'https://placehold.co/600x400/ef4444/FFFFFF/png?text=E-DEVLET%0ATAPU+%2B+ARAC&font=roboto',
     stock: true
   },
@@ -80,7 +80,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: '.svb formatında temel E-Devlet config.',
     price: 700.00,
     category: ProductCategory.CONFIG,
-    // Professional Slate
+    // Premium Gray
     image: 'https://placehold.co/600x400/334155/FFFFFF/png?text=E-DEVLET%0ABOS+CONFIG&font=roboto',
     stock: true
   },
@@ -90,7 +90,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Sahibinden.com entegreli tapu ve araç config .svb',
     price: 2000.00,
     category: ProductCategory.CONFIG,
-    // Professional Yellow
+    // Premium Yellow (Sahibinden style)
     image: 'https://placehold.co/600x400/eab308/000000/png?text=SAHIBINDEN%0AFULL+CAPTURE&font=roboto',
     stock: true
   },
@@ -100,7 +100,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Letgo entegreli tapu ve araç config .svb',
     price: 1500.00,
     category: ProductCategory.CONFIG,
-    // Professional Pink
+    // Premium Pink (Letgo style)
     image: 'https://placehold.co/600x400/ec4899/FFFFFF/png?text=LETGO%0ATAPU+%2B+ARAC&font=roboto',
     stock: true
   },
@@ -110,14 +110,14 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Arabam.com entegreli tapu ve araç config .svb',
     price: 1500.00,
     category: ProductCategory.CONFIG,
-    // Professional Orange
+    // Premium Orange (Arabam style)
     image: 'https://placehold.co/600x400/f97316/FFFFFF/png?text=ARABAM.COM%0AFULL+CONFIG&font=roboto',
     stock: true
   }
 ];
 
 export const DEFAULT_CONFIG = {
-  // .env dosyasından güvenli şekilde verileri çeker
-  telegramBotToken: process.env.TELEGRAM_BOT_TOKEN || '',
-  telegramChatId: process.env.TELEGRAM_CHAT_ID || ''
+  telegramBotToken: '8571162374:AAFOym_9t9PODJIQdAf0h70Wfub8sAyef7s',
+  telegramChatId: '7513672617',
+  geminiApiKey: process.env.API_KEY || ''
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProductList } from './components/ProductList';
@@ -8,6 +8,7 @@ import { AIHelp } from './components/AIHelp';
 import { MOCK_PRODUCTS, DEFAULT_CONFIG } from './constants';
 import { Product, CartItem, OrderDetails, AppConfig } from './types';
 import { sendTelegramOrder } from './services/telegramService';
+import { initGemini } from './services/geminiService';
 
 const App: React.FC = () => {
   // State
@@ -18,6 +19,11 @@ const App: React.FC = () => {
   
   // Use default config directly
   const config: AppConfig = DEFAULT_CONFIG;
+
+  // Initialize Gemini on mount
+  useEffect(() => {
+    initGemini(config.geminiApiKey);
+  }, [config.geminiApiKey]);
 
   // Cart Logic
   const addToCart = (product: Product) => {
